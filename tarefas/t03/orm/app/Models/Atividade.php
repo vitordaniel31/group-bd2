@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Atividade extends Model
+{
+    protected $table = 'atividade'; 
+    protected $primaryKey = 'codigo';
+
+    protected $fillable = [
+        'descricao', 
+        'dataInicio', 
+        'dataFim',
+        'situacao',
+        'dataConclusao',
+    ]; 
+
+    protected $casts = [
+        'dataInicio' => 'date',
+        'dataFim' => 'date',
+        'dataConclusao' => 'date',
+    ];
+}
