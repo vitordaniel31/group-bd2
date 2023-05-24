@@ -4,17 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Atividade extends Model
+class Projeto extends Model
 {
-    protected $table = 'atividade'; 
+    protected $table = 'projeto'; 
     protected $primaryKey = 'codigo';
 
     protected $fillable = [
         'descricao', 
-        'dataInicio', 
+        'depto', 
+        'responsavel',
+        'dataInicio',
         'dataFim',
         'situacao',
         'dataConclusao',
+        'equipe',
     ]; 
 
     protected $casts = [
@@ -23,8 +26,8 @@ class Atividade extends Model
         'dataConclusao' => 'date',
     ];
 
-    public function projetos()
+    public function atividades()
     {
-        return $this->belongsToMany(Projeto::class, 'atividade_projeto', 'codAtividade', 'codProjeto');
+        return $this->belongsToMany(Atividade::class, 'atividade_projeto', 'codProjeto', 'codAtividade');
     }
 }
