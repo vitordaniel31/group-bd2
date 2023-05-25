@@ -1,9 +1,13 @@
 <?php
-include('connection.php');
+include('app/config/connection.php');
 
 use App\Models\Projeto;
 
-$projeto = Projeto::find(2); //passe o código do projeto como parâmetro
+$consulta = medirTempoConsulta(function () {
+    return Projeto::find(2); //passe o código do projeto como parâmetro
+});
+
+$projeto = $consulta['resultado'];
 
 if ($projeto && $projeto->atividades()->count() > 0) {
     foreach ($projeto->atividades as $atividade) {

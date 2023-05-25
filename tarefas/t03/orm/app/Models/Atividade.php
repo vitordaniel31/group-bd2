@@ -8,6 +8,7 @@ class Atividade extends Model
 {
     protected $table = 'atividade'; 
     protected $primaryKey = 'codigo';
+    public $timestamps = false;
 
     protected $fillable = [
         'descricao', 

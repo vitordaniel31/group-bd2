@@ -8,6 +8,7 @@ class Projeto extends Model
 {
     protected $table = 'projeto'; 
     protected $primaryKey = 'codigo';
+    public $timestamps = false;
 
     protected $fillable = [
         'descricao', 
