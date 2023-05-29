@@ -23,4 +23,9 @@ class Atividade extends Model
         'dataFim' => 'date',
         'dataConclusao' => 'date',
     ];
+
+    public function membros()
+    {
+        return $this->belongsToMany(Membro::class, 'atividade_membro', 'codAtividade', 'codMembro');
+    }
 }

@@ -37,8 +37,8 @@ class Projeto extends Model
         return $this->belongsTo(Funcionario::class, 'responsavel');
     }
 
-    public function equipe()
+    public function atividades()
     {
-        return $this->belongsTo(Equipe::class, 'equipe');
+        return $this->belongsToMany(Atividade::class, 'atividade_projeto', 'codProjeto', 'codAtividade');
     }
 }

@@ -8,7 +8,12 @@ class AtividadeProjeto extends Model
 {
     protected $table = 'atividade_projeto';
     public $timestamps = false;
-    protected $primaryKey = null;
+    protected $primaryKey = ['codAtividade', 'codProjeto'];
+
+    protected $fillable = [
+        'codAtividade',
+        'codProjeto',
+    ];
 
     public function atividade()
     {
