@@ -3,11 +3,7 @@ include('app/config/connection.php');
 
 use App\Models\Projeto;
 
-$consulta = medirTempoConsulta(function () {
-    return Projeto::find(2); //passe o código do projeto como parâmetro
-});
-
-$projeto = $consulta['resultado'];
+$projeto = Projeto::find(2); //passe o código do projeto como parâmetro
 
 if ($projeto && $projeto->atividades()->count() > 0) {
     foreach ($projeto->atividades as $atividade) {

@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 use App\Models\Log;
 
-function medirTempoConsulta($consulta)
+function medirTempoConsulta($sql, $consulta)
 {
     $inicio = Carbon::now();
     $resultado = $consulta(); //consulta
@@ -11,9 +11,6 @@ function medirTempoConsulta($consulta)
 
     // Calcula a diferença de tempo
     $diferenca = $fim->diffInMilliseconds($inicio);
-
-    // Obtém o SQL executado
-    $sql = $resultado->toSql();
 
     $log = Log::create([
         'consulta' => $sql,
