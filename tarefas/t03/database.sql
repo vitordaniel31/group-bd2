@@ -1,3 +1,8 @@
+CREATE TABLE log(
+  tempo VARCHAR(255),
+  consulta TEXT,
+);
+
 CREATE TABLE funcionario (
   codigo INT AUTO_INCREMENT,
   nome VARCHAR(15) NOT NULL,
