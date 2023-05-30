@@ -13,3 +13,5 @@ $capsule->addConnection($connection['database']);
 $capsule->setAsGlobal();
 
 $capsule->bootEloquent();
+
+return $capsule;
